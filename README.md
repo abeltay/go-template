@@ -4,9 +4,9 @@
 
 1. Install [Go](https://go.dev/)
 1. Install [Docker](https://www.docker.com/)
-1. Install SQL migrate: `go install github.com/rubenv/sql-migrate/...@latest`
+1. `make install`
 1. `make up`
-1. `make seed`
+1. `make migrate`
 
 ## Testing
 
@@ -16,4 +16,4 @@
 
 ## Clean-up
 
-1. `make clean`
+To delete database and migrate again: `make clean`
