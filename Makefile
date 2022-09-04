@@ -1,4 +1,4 @@
-.PHONY: up down pull update clean install migrate test generate-sqlboiler generate-mocks psql run
+.PHONY: up down pull update clean migrate test generate-sqlboiler generate-mocks psql run
 
 up:
 	docker compose up --detach postgres
@@ -15,11 +15,8 @@ update: pull up
 clean:
 	docker compose down --remove-orphans --volumes
 
-install:
-	go install github.com/rubenv/sql-migrate/...@v1.1.2
-
 migrate:
-	sql-migrate up
+	go run ./cmd/migrate
 
 test:
 	go test -cover ./...

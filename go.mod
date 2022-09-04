@@ -8,6 +8,7 @@ require (
 	github.com/go-chi/chi/v5 v5.0.7
 	github.com/google/uuid v1.3.0
 	github.com/jackc/pgx/v4 v4.17.1
+	github.com/rubenv/sql-migrate v1.1.2
 	github.com/stretchr/testify v1.8.0
 	github.com/volatiletech/sqlboiler/v4 v4.12.0
 	go.uber.org/zap v1.23.0
@@ -15,6 +16,7 @@ require (
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/go-gorp/gorp/v3 v3.0.2 // indirect
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
 	github.com/jackc/pgconn v1.13.0 // indirect
 	github.com/jackc/pgio v1.0.0 // indirect
