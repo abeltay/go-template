@@ -1,18 +1,18 @@
 module github.com/abeltay/go-template
 
-go 1.18
+go 1.19
 
 require (
 	github.com/abeltay/go-kit v0.0.0-20210423092155-3ff7a1ed5e1a
-	github.com/caarlos0/env/v6 v6.10.0
+	github.com/caarlos0/env/v6 v6.10.1
 	github.com/friendsofgo/errors v0.9.2
 	github.com/go-chi/chi/v5 v5.0.7
 	github.com/google/uuid v1.3.0
-	github.com/jackc/pgx/v4 v4.17.1
-	github.com/rubenv/sql-migrate v1.1.2
+	github.com/jackc/pgx/v4 v4.17.2
+	github.com/rubenv/sql-migrate v1.2.0
 	github.com/stretchr/testify v1.8.0
 	github.com/volatiletech/null/v8 v8.1.2
-	github.com/volatiletech/sqlboiler/v4 v4.12.0
+	github.com/volatiletech/sqlboiler/v4 v4.13.0
 	github.com/volatiletech/strmangle v0.0.4
 	go.uber.org/zap v1.23.0
 )
