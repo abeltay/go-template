@@ -22,13 +22,11 @@ test:
 	go test -cover ./...
 
 install-sqlboiler:
-	go install golang.org/x/tools/cmd/goimports@latest
 	go install github.com/volatiletech/sqlboiler/v4@v4.12.0
 	go install github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-psql@v4.12.0
 
 generate-sqlboiler:
 	sqlboiler psql
-	goimports -w models/*.go
 
 generate-mocks:
 	docker compose run --rm mockery --recursive=false --with-expecter=true --dir=postgres --name=Postgres
