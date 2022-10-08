@@ -3,19 +3,19 @@
 sqlboiler-version = v4.13.0
 
 up:
-	docker compose up --detach postgres
+	docker-compose up --detach postgres
 
 down:
-	docker compose down --remove-orphans
+	docker-compose down --remove-orphans
 
 pull:
-	docker compose pull
+	docker-compose pull
 
 update: pull up
 	docker system prune
 
 clean:
-	docker compose down --remove-orphans --volumes
+	docker-compose down --remove-orphans --volumes
 
 migrate:
 	go run ./cmd/migrate
@@ -31,10 +31,10 @@ generate-sqlboiler:
 	sqlboiler psql
 
 generate-mocks:
-	docker compose run --rm mockery --recursive=false --with-expecter=true --dir=postgres --name=Postgres
+	docker-compose run --rm mockery --recursive=false --with-expecter=true --dir=postgres --name=Postgres
 
 psql:
-	docker compose exec postgres psql -U test
+	docker-compose exec postgres psql -U test
 
 run:
 	go run ./cmd/api
