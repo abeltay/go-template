@@ -1,5 +1,7 @@
 .PHONY: up down pull update clean migrate test generate-sqlboiler generate-mocks psql run
 
+sqlboiler-version = v4.13.0
+
 up:
 	docker compose up --detach postgres
 
@@ -22,8 +24,8 @@ test:
 	go test -cover ./...
 
 install-sqlboiler:
-	go install github.com/volatiletech/sqlboiler/v4@v4.12.0
-	go install github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-psql@v4.12.0
+	go install github.com/volatiletech/sqlboiler/v4@$(sqlboiler-version)
+	go install github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-psql@$(sqlboiler-version)
 
 generate-sqlboiler:
 	sqlboiler psql
