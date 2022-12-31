@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres:14-alpine
+    restart: 'always'
+    ports:
+      - '5432:5432'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready']
+      interval: '1m30s'
+      timeout: '30s'
+      retries: 3
+      start_period: '1m'
+    environment:
+      POSTGRES_USER: 'test'
+      POSTGRES_PASSWORD: 'password'
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  mockery:
+    image: vektra/mockery:v2.14.0
+    working_dir: /src
+    volumes:
+      - ./:/src
+
+volumes:
+  pg_data:

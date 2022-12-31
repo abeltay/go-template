@@ -1,0 +1,10 @@
+no-hooks = true
+no-tests = true
+no-rows-affected = true
+no-driver-templates = true # remove if you need to use UPSERT
+
+[psql]
+  dbname = "test"
+  host   = "localhost"
+  user   = "test"
+  pass   = "password"
