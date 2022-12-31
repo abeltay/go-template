@@ -6,6 +6,11 @@
 1. Install [Docker](https://www.docker.com/)
 1. `make up`
 1. `make migrate`
+1. `make install-sqlboiler`
+
+## Generate code
+1. `make generate-sqlboiler`
+1. `make generate-mocks`
 
 ## Testing
 
