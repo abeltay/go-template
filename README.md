@@ -4,7 +4,6 @@
 
 1. Install [Go](https://go.dev/)
 1. Install [Docker](https://www.docker.com/)
-1. `make install`
 1. `make up`
 1. `make migrate`
 
