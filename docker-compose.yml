@@ -19,7 +19,7 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   mockery:
-    image: vektra/mockery:v2.14.0
+    image: vektra/mockery:v2.20.2
     working_dir: /src
     volumes:
       - ./:/src
