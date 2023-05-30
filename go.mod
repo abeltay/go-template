@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/abeltay/go-kit v0.0.0-20221231085731-222325778d80
-	github.com/caarlos0/env/v6 v6.10.1
+	github.com/caarlos0/env/v8 v8.0.0
 	github.com/friendsofgo/errors v0.9.2
 	github.com/go-chi/chi/v5 v5.0.8
 	github.com/google/uuid v1.3.0

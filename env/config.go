@@ -1,9 +1,9 @@
 package env
 
-import "github.com/caarlos0/env/v6"
+import "github.com/caarlos0/env/v8"
 
-// Options contain the values to be collected from the environment
-type Options struct {
+// Config contain the values to be collected from the environment
+type Config struct {
 	Production              bool   `env:"PRODUCTION"`
 	DatabaseHost            string `env:"DATABASE_HOST" envDefault:"localhost"`
 	DatabaseName            string `env:"DATABASE_NAME" envDefault:"test"`
@@ -15,8 +15,8 @@ type Options struct {
 }
 
 // LoadOSEnv parses values from environment variables and populates the struct
-func LoadOSEnv() (Options, error) {
-	var opt Options
-	err := env.Parse(&opt)
-	return opt, err
+func LoadOSEnv() (Config, error) {
+	var cfg Config
+	err := env.Parse(&cfg)
+	return cfg, err
 }
