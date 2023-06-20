@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   postgres:
-    image: postgres:14-alpine
+    image: postgres:15-alpine
     restart: 'always'
     ports:
       - '5432:5432'
@@ -19,7 +19,7 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   mockery:
-    image: vektra/mockery:v2.20.2
+    image: vektra/mockery:v2.30.1
     working_dir: /src
     volumes:
       - ./:/src
