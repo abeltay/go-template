@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/abeltay/go-kit v0.0.0-20230604060156-1a2dda4701f5
-	github.com/caarlos0/env/v8 v8.0.0
+	github.com/caarlos0/env/v9 v9.0.0
 	github.com/friendsofgo/errors v0.9.2
 	github.com/go-chi/chi/v5 v5.0.10
 	github.com/google/uuid v1.3.1
