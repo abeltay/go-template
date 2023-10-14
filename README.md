@@ -15,6 +15,7 @@
 ## Testing
 
 1. Start the database by running `make up`
+1. `make migrate`
 1. `make test`
 1. (Optional) After completion of your tests, `make down`
 

@@ -7,3 +7,4 @@ no-tests = true
   user    = "test"
   pass    = "password"
   sslmode = "disable"
+  blacklist = ["gorp_migrations"]
