@@ -23,9 +23,22 @@ func (f Router) Handler() http.Handler {
 		Logger: f.ZapLogger,
 	}
 	r.Use(logger.Chain)
-	r.Get("/healthz", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "ok")
-	})
-	r.Get("/ping", f.Ping)
+	r.Get("/livez", liveliness)
+	r.Get("/readyz", f.Ping)
+
+	r.Group(f.group)
 	return r
+}
+
+func liveliness(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "ok")
+}
+
+func (f Router) group(r chi.Router) {
+	r.Route("/user", f.users)
+}
+
+func (f Router) users(r chi.Router) {
+	r.Post("/", f.AddUser)
+	r.Get("/{id}", f.UserFullName)
 }

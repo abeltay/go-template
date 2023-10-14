@@ -41,12 +41,6 @@ jobs:
     - name: Migrate PostgreSQL
       run: make migrate
 
-    - name: Install SQLBoiler
-      run: make install-sqlboiler
-
-    - name: Generate SQLBoiler
-      run: make generate-sqlboiler
-
     - name: Build
       run: go build -v ./...
 

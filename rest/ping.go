@@ -16,5 +16,5 @@ func (f Router) Ping(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "error", http.StatusInternalServerError)
 		return
 	}
-	fmt.Fprintf(w, "ok")
+	fmt.Fprintln(w, "ok")
 }
