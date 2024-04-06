@@ -6,7 +6,6 @@ import (
 
 	"github.com/abeltay/go-template/postgres"
 	"github.com/abeltay/go-template/rest/logger"
-	"github.com/go-chi/chi/v5"
 	"go.uber.org/zap"
 )
 
@@ -18,27 +17,19 @@ type Router struct {
 
 // Handler returns a http.Handler to be run by a http.Server
 func (f Router) Handler() http.Handler {
-	r := chi.NewRouter()
+	mux := http.NewServeMux()
 	logger := logger.ZapLogMiddleware{
 		Logger: f.ZapLogger,
 	}
-	r.Use(logger.Chain)
-	r.Get("/livez", liveliness)
-	r.Get("/readyz", f.Ping)
+	mux.HandleFunc("GET /livez", logger.Chain(liveliness))
+	mux.HandleFunc("GET /readyz", logger.Chain(f.Ping))
 
-	r.Group(f.group)
-	return r
+	mux.HandleFunc("POST /user/", logger.Chain(f.AddUser))
+	mux.HandleFunc("GET /user/{id}", logger.Chain(f.UserFullName))
+
+	return mux
 }
 
 func liveliness(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "ok")
-}
-
-func (f Router) group(r chi.Router) {
-	r.Route("/user", f.users)
-}
-
-func (f Router) users(r chi.Router) {
-	r.Post("/", f.AddUser)
-	r.Get("/{id}", f.UserFullName)
 }

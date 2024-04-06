@@ -49,8 +49,8 @@ type ZapLogMiddleware struct {
 	Logger *zap.Logger
 }
 
-func (f ZapLogMiddleware) Chain(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+func (f ZapLogMiddleware) Chain(next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
 		uuid, err := uuid.NewUUID()
 		requestID := uuid.String()
 		if err != nil {
@@ -67,6 +67,6 @@ func (f ZapLogMiddleware) Chain(next http.Handler) http.Handler {
 				zap.Float64("response_time_ms", time.Since(start).Seconds()*1000),
 			)
 		}()
-		next.ServeHTTP(w, r)
-	})
+		next(w, r)
+	}
 }
