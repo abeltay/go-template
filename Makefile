@@ -1,6 +1,6 @@
 .PHONY: up down pull update clean migrate test generate-sqlboiler generate-mocks psql run
 
-sqlboiler-version = v4.15.0
+sqlboiler-version = v4.16.2
 
 up:
 	docker compose up --detach postgres

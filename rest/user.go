@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"net/url"
 	"strconv"
 
 	"github.com/abeltay/go-template/rest/logger"
-	"github.com/go-chi/chi/v5"
 	"go.uber.org/zap"
 )
 
@@ -34,11 +34,18 @@ func (f Router) AddUser(w http.ResponseWriter, r *http.Request) {
 
 func (f Router) UserFullName(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
-	idParam := chi.URLParam(r, "id")
-	id, err := strconv.Atoi(idParam)
+	params, err := url.ParseQuery(r.URL.RawQuery)
 	if err != nil {
 		log := logger.ZapLogger(ctx)
 		log.Info("param error", zap.Error(err))
+		http.Error(w, "error", http.StatusBadRequest)
+		return
+	}
+	idStr := params.Get("id")
+	id, err := strconv.Atoi(idStr)
+	if err != nil {
+		log := logger.ZapLogger(ctx)
+		log.Info("param error, cannot convert to int", zap.Error(err))
 		http.Error(w, "error", http.StatusBadRequest)
 		return
 	}
