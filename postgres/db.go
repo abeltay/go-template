@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/abeltay/go-template/env"
-	"github.com/jackc/pgx/v4"
-	"github.com/jackc/pgx/v4/stdlib"
+	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/stdlib"
 )
 
 // OpenDB returns a new instance of DB associated with the given datasource name.
