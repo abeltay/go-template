@@ -1,6 +1,6 @@
 package env
 
-import "github.com/caarlos0/env/v9"
+import "github.com/caarlos0/env/v11"
 
 // Config contain the values to be collected from the environment
 type Config struct {
