@@ -1,7 +1,7 @@
 github.com/DATA-DOG/go-sqlmock v1.4.1 h1:ThlnYciV1iM/V0OSF/dtkqWb6xo5qITT1TJBG1MRDJM=
 github.com/DATA-DOG/go-sqlmock v1.4.1/go.mod h1:f/Ixk793poVmq4qj/V1dPUg2JEAKC73Q5eFN3EC/SaM=
-github.com/abeltay/go-kit v0.0.0-20230604060156-1a2dda4701f5 h1:Qlaz+7u4hCCkiaJbWpH0roIY1C//bJ0xUiUSuGcJoJ4=
-github.com/abeltay/go-kit v0.0.0-20230604060156-1a2dda4701f5/go.mod h1:Bl/y8hZ7pCnaOTCyHzyEtZR3BgENFkyAQwMne0eFrTg=
+github.com/abeltay/go-kit v0.0.0-20250704022329-f47290fa8011 h1:ciGI07ApnGgkbV60oaqluUlCpOMcQSNIeRQwtvegutA=
+github.com/abeltay/go-kit v0.0.0-20250704022329-f47290fa8011/go.mod h1:3xPiTrLn0WwLR0tzT+wsKBlZ0XbtmRE8PaCW5HyJlBA=
 github.com/caarlos0/env/v11 v11.3.1 h1:cArPWC15hWmEt+gWk7YBi7lEXTXCvpaSdCiZE2X5mCA=
 github.com/caarlos0/env/v11 v11.3.1/go.mod h1:qupehSf/Y0TUTsxKywqRt/vJjN5nz6vauiYEUUr8P4U=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

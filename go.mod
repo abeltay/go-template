@@ -3,7 +3,7 @@ module github.com/abeltay/go-template
 go 1.24.4
 
 require (
-	github.com/abeltay/go-kit v0.0.0-20230604060156-1a2dda4701f5
+	github.com/abeltay/go-kit v0.0.0-20250704022329-f47290fa8011
 	github.com/caarlos0/env/v11 v11.3.1
 	github.com/friendsofgo/errors v0.9.2
 	github.com/google/uuid v1.6.0
